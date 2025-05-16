@@ -6,6 +6,7 @@ phases:
             nodejs: 16
         commands:
             - echo "installing something"
+            - printenv
     pre_build:
         commands: 
             - echo "we are in the pre build phase"
@@ -17,4 +18,9 @@ phases:
     post_build:
         commands:
             - echo "we are in the post build phase"
+            - echo "Saving the Artifacts"
             
+artifacts:
+  files:
+    - '**/*'
+  name: my-webpage-artifacts
